@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 require_relative '../text/text_instructions'
 
+# this class is used to start the game
 class Game
   include Display
   include TextInstructions

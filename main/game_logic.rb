@@ -1,3 +1,8 @@
+# frozen_string_literal: true
+
+require 'io/console'
+
+# module that contains the main functionality of the game
 module GameLogic
   OPTIONS = %w[1 2 3 4 5 6].freeze
   EXIT_KEYS = %w[q exit].freeze
@@ -42,6 +47,9 @@ module GameLogic
     puts game_message('play again')
     result = gets.chomp
     puts game_message('thanks') if result.downcase != 'y'
-    Game.new.start_game if result.downcase == 'y'
+    return unless result.downcase == 'y'
+
+    $stdout.clear_screen
+    Game.new.start_game
   end
 end

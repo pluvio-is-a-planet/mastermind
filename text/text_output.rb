@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../main/display'
 
 # rubocop:disable Layout/LineLength
@@ -32,7 +34,7 @@ module TextOutput
     {
       'mode' => stylize_output("Enter '1' to be the code MAKER or '2' to be the code BREAKER, or 'q' or 'exit' to quit.", 'color', '91'),
       'turn' => stylize_output('Your guess should only contain 4 digits between 1 and 6.', 'color', '91'),
-      'key' => stylize_output('Your key has to be 4 characters long, using numbers between 1 and 6.', 'color', '91'),
+      'key' => stylize_output('Your key has to be 4 characters long, using numbers between 1 and 6.', 'color', '91')
     }[type]
   end
 end

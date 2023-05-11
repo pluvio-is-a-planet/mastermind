@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# module used to handle the way things look
 module Display
   def stylize_output(text, style, color = nil, url = nil)
     {
@@ -15,7 +18,7 @@ module Display
       '3' => stylize_output('  3  ', 'color', '43;97;1'), # yellow bg with bright white text
       '4' => stylize_output('  4  ', 'color', '44;97;1'), # blue bg with bright white text
       '5' => stylize_output('  5  ', 'color', '45;97;1'), # magenta bg with bright white text
-      '6' => stylize_output('  6  ', 'color', '46;97;1'), # cyan bg with bright white text
+      '6' => stylize_output('  6  ', 'color', '46;97;1') # cyan bg with bright white text
     }[num]
   end
 

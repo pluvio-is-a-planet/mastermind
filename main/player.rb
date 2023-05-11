@@ -1,7 +1,10 @@
+# frozen_string_literal: true
+
 require_relative 'game_logic'
 require_relative 'display'
 require_relative '../text/text_output'
 
+# this class is for when the user chooses to be the code breaker
 class Player
   attr_accessor :exact_matches, :half_matches
   attr_reader :key, :guess
