@@ -1,6 +1,6 @@
 require_relative 'game_logic'
 require_relative 'display'
-require_relative 'text_output'
+require_relative '../text/text_output.rb'
 
 class Player
   attr_reader :key, :guess
