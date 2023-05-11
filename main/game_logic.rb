@@ -21,7 +21,7 @@ module GameLogic
   def half_match(key, guess)
     result = 0
     guess.each_with_index do |color, index|
-      next unless color != key[index] && key.include? color
+      next unless color != key[index] && key.include?(color)
 
       result += 1
       to_be_removed = key.find_index(guess[index])
