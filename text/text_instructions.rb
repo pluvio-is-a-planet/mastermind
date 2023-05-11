@@ -11,9 +11,9 @@ module TextInstructions
 
 
     This is a #{stylize_output('player-versus-computer', 'bright')} game.
-    To start the game, you have to choose between being the code #{stylize_output('MAKER', 'color', '94')} and the code #{stylize_output('BREAKER', 'color', '91')}
+    To start the game, you have to choose between being the code #{stylize_output('MAKER', 'color', '94;1')} and the code #{stylize_output('BREAKER', 'color', '91;1')}
 
-    Then, the code #{stylize_output('MAKER', 'color', '94')} will choose four numbers/colors from
+    Then, the code #{stylize_output('MAKER', 'color', '94;1')} will choose four numbers/colors from
     the following list to create a 'key':
 
     #{code_color('1')} #{code_color('2')} #{code_color('3')} #{code_color('4')} #{code_color('5')} #{code_color('6')}
@@ -42,10 +42,10 @@ module TextInstructions
     Indicating that they have #{stylize_output('1 correct number in the correct position, and 2 correct numbers in the wrong position', 'bright')}
 
     Phew! That was a lot of reading, #{stylize_output("It's time to play mastermind!", 'underline')}
-    Now you get to choose, do you want to be the code #{stylize_output('MAKER', 'color', '94')} or the code #{stylize_output('BREAKER', 'color', '91')}?
+    Now you get to choose, do you want to be the code #{stylize_output('MAKER', 'color', '94;1')} or the code #{stylize_output('BREAKER', 'color', '91;1')}?
 
-      Enter '1' if you want to be the code #{stylize_output('MAKER', 'color', '94')}
-      Enter '2' if you want to be the code #{stylize_output('BREAKER', 'color', '91')}
+      Enter '1' if you want to be the code #{stylize_output('MAKER', 'color', '94;1')}
+      Enter '2' if you want to be the code #{stylize_output('BREAKER', 'color', '91;1')}
     DOC
   end
 end
