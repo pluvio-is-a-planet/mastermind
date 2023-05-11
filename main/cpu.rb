@@ -26,4 +26,7 @@ class Cpu
     put messages('input error')
     set_code
   end
+
+  def computer_guess
+  end
 end
