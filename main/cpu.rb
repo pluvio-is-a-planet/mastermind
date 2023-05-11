@@ -60,7 +60,7 @@ class Cpu
   def find_code_order
     @permutations = create_permutations(four_numbers)
     @permutations.uniq!
-    compare_previous_guesses()
+    compare_previous_guesses
     final_turns
   end
 
