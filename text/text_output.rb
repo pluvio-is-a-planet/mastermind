@@ -15,7 +15,7 @@ module TextOutput
       'computer think' => "Thinking...\n",
       'start guessing' => 'The secret key has been set, can you guess it?>>',
       'prompt key' => 'Enter the code for the computer to guess>>',
-      'key' => "is your key.\n"
+      'key' => "  is your key.\n"
     }[type]
   end
 
