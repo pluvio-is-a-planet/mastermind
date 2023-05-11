@@ -45,7 +45,7 @@ class Player
       show_code(guess)
       break if solved?(key, guess)
 
-      puts messages('show clues', guess_result)
+      guess_result
     end
   end
 
@@ -53,7 +53,9 @@ class Player
     if solved?(key, guess)
       puts messages('user wins')
     else
-      puts messages('user loses', nil, key)
+      print messages('user loses')
+      show_code(key)
+      puts ''
     end
     # prompt the user to play again
   end
