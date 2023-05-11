@@ -37,4 +37,11 @@ module GameLogic
   def solved?(key, guess)
     key == guess
   end
+
+  def play_again?
+    puts messages('play again prompt')
+    result = gets.chomp
+    puts messages('thanks') if result.downcase != 'y'
+    Game.new.start_game if result.downcase == 'y'
+  end
 end

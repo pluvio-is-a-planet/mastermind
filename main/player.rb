@@ -57,7 +57,7 @@ class Player
       show_code(key)
       puts ''
     end
-    # prompt the user to play again
+    play_again?
   end
 
   def guess_result
