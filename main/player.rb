@@ -3,6 +3,7 @@ require_relative 'display'
 require_relative '../text/text_output'
 
 class Player
+  attr_accessor :exact_matches, :half_matches
   attr_reader :key, :guess
 
   include Display
@@ -11,6 +12,12 @@ class Player
 
   def initialize
     @key = random_key
+  end
+
+  def game
+    puts 'The key has been generated, time to make the first guess>>'
+    play_game
+    game_over
   end
 
   private
@@ -31,21 +38,16 @@ class Player
   def play_game
     (1..12).each do |n|
       puts "Turn #{n}"
-      @guess = player_guess.split('')
+      @guess = player_guess
+      break if EXIT_KEYS.include?(guess.downcase)
 
-      break if EXIT_KEYS.include?(result.downcase)
-
-      # output the player's guess
+      @guess = guess.split('')
+      show_code(guess)
       break if solved?(key, guess)
 
       # output the clues to show the player
+      guess_result
     end
-  end
-
-  def game
-    puts 'The key has been generated, time to make the first guess>>'
-    play_game
-    game_over
   end
 
   def game_over
@@ -53,8 +55,15 @@ class Player
       puts 'You cracked the code!'
     else
       puts 'Game over...'
-      puts "The key was:  #{show_code(key)}"
+      print 'The key was:  '
+      show_code(key)
+      puts ''
     end
     # prompt the user to play again
+  end
+
+  def guess_result
+    evaluate_guess(key, guess)
+    show_clues(exact_matches, half_matches)
   end
 end
