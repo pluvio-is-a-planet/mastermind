@@ -3,6 +3,8 @@ require_relative 'display'
 require_relative 'text_output'
 
 class Player
+  attr_reader :key, :guess
+
   # include Display
   include GameLogic
   include TextOutput
@@ -43,6 +45,16 @@ class Player
   def game
     puts 'The key has been generated, time to make the first guess>>'
     play_game
-    # code to be executed after the game has been completed
+    game_over
+  end
+
+  def game_over
+    if solved?(key, guess)
+      puts 'You cracked the code!'
+    else
+      puts 'Game over...'
+      # display the key
+    end
+    # prompt the user to play again
   end
 end
