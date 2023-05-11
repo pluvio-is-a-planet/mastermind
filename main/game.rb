@@ -6,7 +6,7 @@ class Game
   def start_game
     puts instructions
     game_mode = select_mode
-    # code_maker if game_mode == '1'
+    code_maker if game_mode == '1'
     code_breaker if game_mode == '2'
   end
 
@@ -21,6 +21,11 @@ class Game
 
   def code_breaker
     session = Player.new
+    session.game
+  end
+
+  def code_maker
+    session = Cpu.new
     session.game
   end
 end

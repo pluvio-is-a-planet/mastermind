@@ -1,6 +1,6 @@
 require_relative 'game_logic'
 require_relative 'display'
-require_relative 'text_output'
+require_relative '../text/text_output'
 
 class Cpu
   attr_accessor :key, :guess
@@ -37,15 +37,45 @@ class Cpu
 
   private
 
+  def play_game
+    (1..12).each do |n|
+      puts messages('cpu think')
+      sleep 2
+      @guess = computer_guess
+      show_code(guess)
+      puts ''
+      break if solved?(key, guess)
+
+      guess_result
+    end
+  end
+
   def set_code
     result = gets.chomp
-    return result if result.match(/^[1-6]{4}$/)
+    return result.split('') if result.match(/^[1-6]{4}$/)
 
     put messages('input error')
     set_code
   end
 
+  def guess_result
+    evaluate_guess(key, guess)
+    show_clues(@exact_matches, @half_matches)
+  end
+
+  def game_over
+    if solved?(key, guess)
+      puts messages('cpu wins')
+    else
+      print messages('user loses')
+      show_code(key)
+      puts ''
+    end
+    # prompt the user to play again
+  end
+
   def computer_guess
+    five_guess
   end
 
   def five_guess
