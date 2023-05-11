@@ -11,8 +11,8 @@ module TextOutput
   def turn_message(type, num = nil)
     {
       'prompt guess' => "Turn ##{num}: Enter your guess, or 'q' or 'exit' to quit the game.>>",
-      'computer turn' => "\nComputer turn: ##{num}>>",
-      'computer think' => "Thinking...\n",
+      'computer turn' => "\nComputer guess: ##{num}>>",
+      'computer think' => "\nThinking...\n",
       'start guessing' => 'The secret key has been set, can you guess it?>>',
       'prompt key' => 'Enter the code for the computer to guess>>',
       'key' => "  is your key.\n"

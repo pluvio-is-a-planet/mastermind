@@ -32,8 +32,9 @@ class Cpu
   end
 
   def cpu_turn(key, guess)
-    puts turn_message('computer', turn_count)
+    puts turn_message('computer think')
     sleep 2
+    puts turn_message('computer turn', turn_count)
     show_code(guess)
     evaluate_guess(key, guess)
     show_clues(exact_matches, half_matches)
