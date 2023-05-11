@@ -53,7 +53,7 @@ class Player
       puts 'You cracked the code!'
     else
       puts 'Game over...'
-      # display the key
+      puts "The key was:  #{show_code(key)}"
     end
     # prompt the user to play again
   end
