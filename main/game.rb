@@ -10,7 +10,7 @@ class Game
   def select_mode
     result = gets.chomp
     return result if result.match(/^[1-2]$/)
-    return result if %w[q exit].include?(result)
+    return result if %w[q exit].include?(result.downcase)
 
     puts "Invalid input, please only enter '1', '2', 'q', or 'exit'"
     select_mode
