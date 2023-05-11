@@ -20,8 +20,8 @@ module Display
 
   def clue_color(clue)
     {
-      '*' => stylize_output("\u25CF", 'color'), # ●
-      '?' => stylize_output("\u25CB", 'color'), # ○
+      '*' => stylize_output("\u25CF ", 'color'), # ●
+      '?' => stylize_output("\u25CB ", 'color') # ○
       }[clue]
   end
 
