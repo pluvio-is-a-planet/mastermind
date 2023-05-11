@@ -10,9 +10,10 @@ module TextOutput
     {
       'prompt guess' => "Turn ##{num}: Enter your guess, or 'q' or 'exit' to quit the game.>>",
       'computer turn' => "\nComputer turn: ##{num}>>",
+      'computer think' => "Thinking...\n",
       'start guessing' => 'The secret key has been set, can you guess it?>>',
       'prompt key' => 'Enter the code for the computer to guess>>',
-      'computer guess' => "is your key.\n"
+      'key' => "is your key.\n"
     }[type]
   end
 

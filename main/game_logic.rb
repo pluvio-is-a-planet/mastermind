@@ -39,9 +39,9 @@ module GameLogic
   end
 
   def play_again?
-    puts messages('play again prompt')
+    puts game_message('play again')
     result = gets.chomp
-    puts messages('thanks') if result.downcase != 'y'
+    puts game_message('thanks') if result.downcase != 'y'
     Game.new.start_game if result.downcase == 'y'
   end
 end

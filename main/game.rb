@@ -1,6 +1,7 @@
 require_relative '../text/text_instructions'
 
 class Game
+  include Display
   include TextInstructions
 
   def start_game
@@ -15,7 +16,7 @@ class Game
     return result if result.match(/^[1-2]$/)
     return result if %w[q exit].include?(result.downcase)
 
-    puts "Invalid input, please only enter '1', '2', 'q', or 'exit'"
+    error_message('mode')
     select_mode
   end
 
