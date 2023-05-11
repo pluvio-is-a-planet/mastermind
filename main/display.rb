@@ -26,7 +26,7 @@ module Display
   end
 
   def show_code(arr)
-    result = arr.map { |num| code_color(num) }.join(' ')
+    print arr.map { |num| code_color(num) }.join(' ')
   end
 
   def show_clues(exact, half)
