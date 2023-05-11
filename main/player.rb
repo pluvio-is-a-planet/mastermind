@@ -25,4 +25,18 @@ class Player
     puts 'Invalid input, remember the rules!'
     player_guess
   end
+
+  def play_game
+    (1..12).each do |n|
+      puts "Turn #{n}"
+      @guess = player_guess.split('')
+
+      break if %[q exit].include?(result.downcase)
+
+      # output the player's guess
+      break if solved?(key, guess)
+
+      # output the clues to show the player
+    end
+  end
 end
