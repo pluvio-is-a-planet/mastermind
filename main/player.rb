@@ -31,13 +31,13 @@ class Player
     return result if result.match(/^[1-6]{4}$/)
     return result if EXIT_KEYS.include?(result.downcase)
 
-    puts 'Invalid input, remember the rules!>>'
+    puts messages('input error')
     player_guess
   end
 
   def play_game
     (1..12).each do |n|
-      puts "Turn #{n}"
+      puts messages('turn', n)
       @guess = player_guess
       break if EXIT_KEYS.include?(guess.downcase)
 
@@ -45,19 +45,15 @@ class Player
       show_code(guess)
       break if solved?(key, guess)
 
-      # output the clues to show the player
-      guess_result
+      puts messages('show clues', guess_result)
     end
   end
 
   def game_over
     if solved?(key, guess)
-      puts 'You cracked the code!'
+      puts messages('user wins')
     else
-      puts 'Game over...'
-      print 'The key was:  '
-      show_code(key)
-      puts ''
+      puts messages('user loses', nil, key)
     end
     # prompt the user to play again
   end
