@@ -1,5 +1,10 @@
 module GameLogic
-  def evaluate_guess(key, guess); end
+  def evaluate_guess(key, guess)
+    temp_key = key.clone
+    temp_guess = guess.clone
+    @exact_matches = exact_match(temp_key, temp_guess)
+    @half_matches = half_match(temp_key, temp_guess)
+  end
 
   def exact_match(key, guess)
     result = 0
