@@ -11,6 +11,8 @@ class Player
     @key = random_key
   end
 
+  private
+
   def random_key
     result = (1..4).map { OPTIONS.sample }
   end
