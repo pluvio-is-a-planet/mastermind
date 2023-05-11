@@ -30,6 +30,6 @@ class Game
 
   def code_maker
     session = Cpu.new
-    session.game
+    session.cpu_start
   end
 end

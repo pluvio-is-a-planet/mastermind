@@ -12,6 +12,7 @@ module GameLogic
     temp_guess = guess.clone
     @exact_matches = exact_match(temp_key, temp_guess)
     @half_matches = half_match(temp_key, temp_guess)
+    @total_matches = exact_matches + half_matches
   end
 
   def exact_match(key, guess)
