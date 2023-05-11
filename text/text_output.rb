@@ -17,4 +17,11 @@ module TextOutput
       '6' => stylize_output('  6  ', 'color', '46;90'), # cyan bg with bright black text
     }[num]
   end
+
+  def clue_color(clue)
+    {
+      '*' => stylize_output("\u25CF", 'color'), # ●
+      '?' => stylize_output("\u25CB", 'color'), # ○
+      }[clue]
+  end
 end
