@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require_relative 'text_output'
+require_relative '../main/display'
 
 # rubocop:disable Metrics/AbcSize
 
 # module to contain the instructions for the game
 module TextInstructions
-  include TextOutput
+  include Display
 
   def instructions
     <<~DOC
