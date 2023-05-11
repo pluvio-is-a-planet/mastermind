@@ -7,6 +7,10 @@ class Cpu
   include GameLogic
   include TextOutput
 
+  def initialize
+    @key = set_code
+  end
+
   def set_code
     result = gets.chomp
     return result if result.match(/^[1-6]{4}$/)
