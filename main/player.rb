@@ -22,7 +22,7 @@ class Player
     return result if result.match(/^[1-6]{4}$/)
     return result if %[q exit].include?(result.downcase)
 
-    puts 'Invalid input, remember the rules!'
+    puts 'Invalid input, remember the rules!>>'
     player_guess
   end
 
@@ -38,5 +38,11 @@ class Player
 
       # output the clues to show the player
     end
+  end
+
+  def game
+    puts 'The key has been generated, time to make the first guess>>'
+    play_game
+    # code to be executed after the game has been completed
   end
 end
