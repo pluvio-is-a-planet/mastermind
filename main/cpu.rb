@@ -11,6 +11,14 @@ class Cpu
     @key = set_code
   end
 
+  def game
+    puts 'Your key has been created, the computer will now attempt to guess the key>>'
+    play_game
+    game_over
+  end
+
+  private
+
   def set_code
     result = gets.chomp
     return result if result.match(/^[1-6]{4}$/)
