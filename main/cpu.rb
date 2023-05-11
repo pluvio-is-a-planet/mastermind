@@ -3,6 +3,8 @@ require_relative 'display'
 require_relative 'text_output'
 
 class Cpu
+  attr_accessor :key, :guess
+
   include Display
   include GameLogic
   include TextOutput
@@ -47,6 +49,7 @@ class Cpu
   end
 
   def five_guess
-
+    @guess = '1122'
+    # play
   end
 end
