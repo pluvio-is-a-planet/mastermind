@@ -1,5 +1,6 @@
 module GameLogic
   OPTIONS = %w[1 2 3 4 5 6].freeze
+  EXIT_KEYS = %w[q exit].freeze
 
   def evaluate_guess(key, guess)
     temp_key = key.clone

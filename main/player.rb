@@ -16,13 +16,13 @@ class Player
   private
 
   def random_key
-    result = (1..4).map { OPTIONS.sample }
+    (1..4).map { OPTIONS.sample }
   end
 
   def player_guess
     result = gets.chomp
     return result if result.match(/^[1-6]{4}$/)
-    return result if %[q exit].include?(result.downcase)
+    return result if EXIT_KEYS.include?(result.downcase)
 
     puts 'Invalid input, remember the rules!>>'
     player_guess
@@ -33,7 +33,7 @@ class Player
       puts "Turn #{n}"
       @guess = player_guess.split('')
 
-      break if %[q exit].include?(result.downcase)
+      break if EXIT_KEYS.include?(result.downcase)
 
       # output the player's guess
       break if solved?(key, guess)
