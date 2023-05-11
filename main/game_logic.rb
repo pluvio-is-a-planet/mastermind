@@ -26,5 +26,7 @@ module GameLogic
     result
   end
 
-  def solved?(key, guess); end
+  def solved?(key, guess)
+    key == guess
+  end
 end
