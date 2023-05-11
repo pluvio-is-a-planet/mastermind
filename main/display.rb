@@ -1,9 +1,10 @@
 module Display
-  def stylize_output(text, style, color = nil)
+  def stylize_output(text, style, color = nil, url = nil)
     {
       'underline' => "\e[4m#{text}\e[0m",
       'bright' => "\e[1m#{text}\e[0m",
-      'color' => "\e[#{color}m#{text}\e[0m"
+      'color' => "\e[#{color}m#{text}\e[0m",
+      'link' => "\e]8;;#{url}\a#{text}\e]8;;\a"
     }[style]
   end
 
@@ -22,7 +23,7 @@ module Display
     {
       '*' => stylize_output("\u25CF ", 'color'), # ●
       '?' => stylize_output("\u25CB ", 'color') # ○
-      }[clue]
+    }[clue]
   end
 
   def show_code(arr)
